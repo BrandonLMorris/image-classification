@@ -82,8 +82,9 @@ class WideResNet(nn.Module):
 
 def train(learn):
     lr = 0.01
+    wds = 5e-4
     for i, epochs in enumerate([60, 60, 40, 40]):
-        learn.fit(lr, epochs, best_save_name=f'wrl-10-28-p{i}')
+        learn.fit(lr, epochs, wds=wds, best_save_name=f'wrl-10-28-p{i}')
         lr /= 5
 
 
